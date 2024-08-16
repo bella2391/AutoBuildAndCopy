@@ -9,6 +9,7 @@ set "dirA=/path/to/minecraft/server/mods"
 set "fileB=sample.jar"
 set "dirB=/path/to/build/libs"
 set "otherBatFile=/path/to/other.bat"
+set "batStartDir=/path/to/bat/start/dir"
 set "dirG=/path/to/project"
 
 rem execute `.\gradlew build` in directory G
@@ -20,7 +21,8 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
-cd /d "%~dp0%"  rem back the first directory
+rem cd /d "%~dp0%"  rem back the first directory
+cd /d "%batStartDir%"
 rem check existence of fileB in directoryA, if exists, delete it
 if exist "%dirA%\%fileB%" (
     del "%dirA%\%fileB%" 2>nul
