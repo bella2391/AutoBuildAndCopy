@@ -12,7 +12,7 @@ set "otherBatFile=/path/to/other.bat"
 set "batStartDir=/path/to/bat/start/dir"
 set "dirG=/path/to/project"
 
-rem execute `.\gradlew build` in directory G
+rem execute `.\gradlew build` in directoryG
 cd /d "%dirG%"
 call java17.bat
 call .\gradlew build
